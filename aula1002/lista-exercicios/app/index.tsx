@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Lista de Exercícios</Text>
+      <Text style={styles.titulo}>Navegue pelos exercícios</Text>
 
       <TouchableOpacity style={styles.botao} onPress={() => router.push("/exercicios/ex1")}>
         <Text style={styles.textoBotao}>Exercício 1</Text>
@@ -54,7 +54,12 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 10,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    height: "100%",
   },
   titulo: {
     fontSize: 22,
@@ -66,6 +71,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 8,
     marginBottom: 10,
+    width: "35%",
   },
   textoBotao: {
     color: "#fff",
