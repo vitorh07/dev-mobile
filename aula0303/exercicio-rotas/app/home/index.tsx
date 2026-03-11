@@ -1,15 +1,22 @@
 import React from 'react';
 import { router } from 'expo-router';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 export default function HomeScreen() {
     
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Bem-vindo à Home!</Text>
-            <TouchableOpacity style={styles.logoutButton} onPress={() => router.push ('./login')}>
-                <Text style={styles.logoutText}>Logout</Text>
-            </TouchableOpacity>
+            <View style={styles.header}> 
+                <Text style={styles.title}>Dashboard</Text>
+            </View>
+            <ScrollView style={styles.content}>
+                <View style={styles.box}>
+                    <View style={styles.boxChild}></View>
+                    <View style={styles.boxChild}></View>
+                    <View style={styles.boxChild}></View>
+                    <View style={styles.boxChild}></View>
+                </View>
+            </ScrollView>
         </View>
     );
 }
@@ -17,25 +24,44 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#e8e8e8',
+    },
+    header: {
+        width: '100%',
+        padding: 15,
+        backgroundColor: '#ffffff',
+        paddingTop: 20,
+        zIndex: 10,
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         color: '#333',
     },
-    logoutButton: {
-        marginTop: 20,
-        paddingHorizontal: 20,
-        paddingVertical: 10,
-        backgroundColor: '#FF6B6B',
-        borderRadius: 5,
+    content: {
+        flex: 1,
+        paddingHorizontal: 10,
+        paddingTop: 10,
     },
-    logoutText: {
+    box:{
+        width: '100%',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+    },
+    boxChild: {
+        width: '45%',
+        height: 150,
+        backgroundColor: '#007AFF',
+        margin: 10,
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    boxText: {
         color: '#fff',
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: 'bold',
     },
 });
