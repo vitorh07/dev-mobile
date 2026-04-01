@@ -1,0 +1,77 @@
+diff --git a/node_modules/expo-router/build/views/Sitemap.js b/node_modules/expo-router/build/views/Sitemap.js
+index aa45237..78819be 100644
+--- a/node_modules/expo-router/build/views/Sitemap.js
++++ b/node_modules/expo-router/build/views/Sitemap.js
+@@ -128,16 +128,16 @@ function FileItem({ route, level = 0, parents = [], isInitial = false, }) {
+     </>);
+ }
+ function FileIcon() {
+-    return <react_native_1.Image style={styles.image} source={require('expo-router/assets/file.png')}/>;
++    return <react_native_1.Image resizeMode="contain" style={styles.image} source={require('expo-router/assets/file.png')}/>;
+ }
+ function PkgIcon() {
+-    return <react_native_1.Image style={styles.image} source={require('expo-router/assets/pkg.png')}/>;
++    return <react_native_1.Image resizeMode="contain" style={styles.image} source={require('expo-router/assets/pkg.png')}/>;
+ }
+ function ForwardIcon() {
+-    return <react_native_1.Image style={styles.image} source={require('expo-router/assets/forward.png')}/>;
++    return <react_native_1.Image resizeMode="contain" style={styles.image} source={require('expo-router/assets/forward.png')}/>;
+ }
+ function SitemapIcon() {
+-    return <react_native_1.Image style={styles.image} source={require('expo-router/assets/sitemap.png')}/>;
++    return <react_native_1.Image resizeMode="contain" style={styles.image} source={require('expo-router/assets/sitemap.png')}/>;
+ }
+ const styles = react_native_1.StyleSheet.create({
+     container: {
+@@ -217,7 +217,7 @@ const styles = react_native_1.StyleSheet.create({
+     },
+     filename: { color: 'white', fontSize: 20, marginLeft: 12 },
+     virtual: { textAlign: 'right', color: 'white' },
+-    image: { width: 24, height: 24, resizeMode: 'contain', opacity: 0.6 },
++    image: { width: 24, height: 24, opacity: 0.6 },
+     headerIcon: {
+         width: 40,
+         height: 40,
+diff --git a/node_modules/expo-router/build/views/Toast.js b/node_modules/expo-router/build/views/Toast.js
+index 3b5498c..cc37b87 100644
+--- a/node_modules/expo-router/build/views/Toast.js
++++ b/node_modules/expo-router/build/views/Toast.js
+@@ -54,7 +54,7 @@ function Toast({ children, filename, warning, }) {
+             },
+         ]}>
+         {!warning && <react_native_1.ActivityIndicator color="white"/>}
+-        {warning && <react_native_1.Image source={require('expo-router/assets/error.png')} style={styles.icon}/>}
++        {warning && <react_native_1.Image resizeMode="contain" source={require('expo-router/assets/error.png')} style={styles.icon}/>}
+         <react_native_1.View style={{ marginLeft: 8 }}>
+           <react_native_1.Text style={styles.text}>{children}</react_native_1.Text>
+           {filenamePretty && <react_native_1.Text style={styles.filename}>{filenamePretty}</react_native_1.Text>}
+@@ -68,7 +68,7 @@ const styles = react_native_1.StyleSheet.create({
+         backgroundColor: 'transparent',
+         flex: 1,
+     },
+-    icon: { width: 20, height: 20, resizeMode: 'contain' },
++    icon: { width: 20, height: 20 },
+     toast: {
+         alignItems: 'center',
+         borderWidth: 1,
+diff --git a/node_modules/expo-router/build/views/Unmatched.js b/node_modules/expo-router/build/views/Unmatched.js
+index 6763771..52fa943 100644
+--- a/node_modules/expo-router/build/views/Unmatched.js
++++ b/node_modules/expo-router/build/views/Unmatched.js
+@@ -120,7 +120,7 @@ function Unmatched() {
+ }
+ exports.Unmatched = Unmatched;
+ function NotFoundAsset() {
+-    return <react_native_1.Image source={require('expo-router/assets/unmatched.png')} style={styles.image}/>;
++    return <react_native_1.Image resizeMode="contain" source={require('expo-router/assets/unmatched.png')} style={styles.image}/>;
+ }
+ const styles = react_native_1.StyleSheet.create({
+     container: {
+@@ -134,7 +134,6 @@ const styles = react_native_1.StyleSheet.create({
+     image: {
+         width: 270,
+         height: 168,
+-        resizeMode: 'contain',
+         marginBottom: 28,
+     },
+     title: {
